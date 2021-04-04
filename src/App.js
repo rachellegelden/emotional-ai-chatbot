@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useCallback, useEffect, useState} from 'react';
+import ChatbotTerminal from "./ChatbotTerminal";
+import SpacePsychologyIssues from "./content/SpacePsychologyIssues";
+import EmotionalAI from "./content/EmotionalAI";
+import EmotionalAiIssues from "./content/EmotionalAiIssues";
+import AiDeepSpaceIssues from "./content/AiDeepSpaceIssues";
+import AiDeepSpaceResearch from "./content/AiDeepSpaceResearch";
+import Typist from 'react-typist';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const App = () => {
+
+    const [content, setContent] = useState('');
+
+    const displayContent = state => {
+        console.log('displayContent called...');
+        switch (state) {
+            case 'SPACE_PSYCHOLOGY_ISSUES':
+                return <SpacePsychologyIssues/>;
+            case 'EMOTIONAL_AI':
+                return <EmotionalAI/>
+            case 'EMOTIONAL_AI_ISSUES':
+                return <EmotionalAiIssues/>
+            case 'EMOTIONAL_AI_IN_DEEP_SPACE_ISSUES':
+                return <AiDeepSpaceIssues/>
+            case 'AI_DEEP_SPACE_RESEARCH':
+                return <AiDeepSpaceResearch/>
+            default:
+                return <div>Please use Scotty to learn more!</div>;
+        }
+    };
+
+    return (
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'row',
+                backgroundColor: 'black'
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <div
+                style={{
+                    height: "100vh",
+                    width: "33%",
+                }}
+            >
+                <ChatbotTerminal onContentChange={setContent}/>
+            </div>
+            {/*<Typist>*/}
+                <div
+                    style={{
+                        paddingRight: '15px',
+                        paddingLeft: '15px',
+                        margin: '30px',
+                        width: '66%',
+                        color: 'green',
+                        fontFamily: 'courier',
+                        borderWith: '3px',
+                        borderStyle: 'solid',
+                        borderColor: 'green'
+                        // backgroundColor: 'black'
+                    }}
+                >
+                    {displayContent(content)}
+                </div>
+            {/*</Typist>*/}
+        </div>
+    )
 }
 
 export default App;
