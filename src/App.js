@@ -1,18 +1,16 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import ChatbotTerminal from "./ChatbotTerminal";
 import SpacePsychologyIssues from "./content/SpacePsychologyIssues";
 import EmotionalAI from "./content/EmotionalAI";
 import EmotionalAiIssues from "./content/EmotionalAiIssues";
 import AiDeepSpaceIssues from "./content/AiDeepSpaceIssues";
 import AiDeepSpaceResearch from "./content/AiDeepSpaceResearch";
-import Typist from 'react-typist';
 
 const App = () => {
 
     const [content, setContent] = useState('');
 
     const displayContent = state => {
-        console.log('displayContent called...');
         switch (state) {
             case 'SPACE_PSYCHOLOGY_ISSUES':
                 return <SpacePsychologyIssues/>;
@@ -45,7 +43,6 @@ const App = () => {
             >
                 <ChatbotTerminal onContentChange={setContent}/>
             </div>
-            {/*<Typist>*/}
                 <div
                     style={{
                         paddingRight: '15px',
@@ -57,12 +54,10 @@ const App = () => {
                         borderWith: '3px',
                         borderStyle: 'solid',
                         borderColor: 'green'
-                        // backgroundColor: 'black'
                     }}
                 >
                     {displayContent(content)}
                 </div>
-            {/*</Typist>*/}
         </div>
     )
 }

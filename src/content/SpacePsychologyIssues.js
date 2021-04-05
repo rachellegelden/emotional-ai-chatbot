@@ -1,50 +1,51 @@
 import React, {useState} from 'react';
 import Typist from 'react-typist';
 
-const SpacePsychologyIssues = props => {
-    console.log('HELLO');
+const SpacePsychologyIssues = () => {
     const [typingDone, setTypingDone] = useState(false);
     return (
         <div>
-            <Typist avgTypingDelay={50} onTypingDone={() => setTypingDone(true)}>
+            <Typist avgTypingDelay={30} onTypingDone={() => setTypingDone(true)}>
                 <h1>Common Psychological Issues in Space Missions</h1>
             </Typist>
 
-            {/*<Typist avgTypingDelay={10}/>*/}
             {typingDone &&
                 <div>
                     <p>
-                        In the past decades, the role of psychology in the U.S. space program has largely fallen on deaf ears.
-                        This was largely motivated by the fact that it was easier for project managers and engineers to cut
-                        costs by engineering the ‘person’ out of the equation. For astronauts, the absence of psychologists who
-                        could act in an advisory capacity meant one less thing that could lead to them being disqualified from
-                        a mission (Harrison and Fiedler 24).
+                        In past decades, the role of psychology in the U.S. space program has generally fallen on deaf
+                        ears. This was largely motivated by the fact that it was easier for project managers and
+                        engineers to cut costs by engineering the astronauts’ mental health out of the equation. For
+                        astronauts, the absence of psychologists who could act in an advisory capacity meant one less
+                        thing that could lead to them being disqualified from a mission (Harrison and Fiedler 24).
                     </p>
                     <p>
-                        Today’s astronauts are very aware that psychological factors can affect safety, performance and quality
-                        of life in space (Harrison and Fiedler 25). The environment in which astronauts work is isolated,
-                        physically confined, demands a high work-load and is high-stress and dangerous (Vessey and Landon 540).
-                        These extreme conditions can have physical consequences including sleep disturbances, heart
-                        palpitations, anxiety, mood swings, inconsistent motivation and performance decrements. Furthermore,
-                        these conditions can often cause seemingly harmless issues to be escalated to significant interpersonal
-                        conflict  between crew members. Researchers contend that problems associated with crew interactions
-                        could be a significant limiting factor for long-duration space missions (Kring and Kaminski 126).
+                        Today’s astronauts are very aware that psychological factors can affect safety, performance, and
+                        quality of life in space (Harrison and Fiedler 25). The high-stress environment in which
+                        astronauts work is dangerous, isolated, physically confined, and demands a high workload
+                        (Vessey and Landon 540). These extreme conditions can have physical consequences including sleep
+                        disturbances, heart palpitations, anxiety, mood swings, inconsistent motivation, and a decrease
+                        in performance. Furthermore, these conditions can cause minor issues to escalate into
+                        significant interpersonal conflicts between crew members. Researchers contend that problems
+                        associated with crew interactions could be a significant limiting factor for long-duration space
+                        missions (Kring and Kaminski 126).
                     </p>
                     <p>
-                        While we are more knowledgeable about the psychological factors for short-term near-earth missions,
+                        While we are knowledgeable about the psychological factors for short-term, near-earth missions,
                         there is minimal concrete knowledge about the psychological effects of deep-space missions and
-                        multigenerational interstellar missions. Some expected psychological issues in interstellar missions
-                        include:
+                        multigenerational interstellar missions. Some expected psychological issues in interstellar
+                        missions include:
                     </p>
                     <div>
                         <ul>
                             <li>Feelings of isolation</li>
-                            <li>Earth as an insignificant dot in the heavens—Earth-out-of-view phenomenon</li>
+                            <li>Earth-out-of-view phenomenon - viewing Earth as an insignificant dot in the heavens and
+                                the realization that one’s existence is pointless in the grand scheme of the universe</li>
                             <li>Lack of novelty and social contacts in deep space</li>
-                            <li>Dealing with monotony and leisure time through meaningful activities and habitability design</li>
+                            <li>Dealing with monotony and how to use leisure time through meaningful activities and
+                                habitability design</li>
                             <li>Dealing with mentally or medically ill people in a confined space</li>
-                            <li>Unknown physical and psychological effects of radiation due to traveling at near-relativistic speeds</li>
-                            <li>Feelings of homesickness, especially people in the first generation who directly remember the Earth (Kanas 125)</li>
+                            <li>Unknown physical and psychological effects of radiation due to traveling at high speeds</li>
+                            <li>Feelings of homesickness, especially people in the first generation of passengers who directly remember the Earth (Kanas 125)</li>
                         </ul>
                     </div>
                     <p>Works Cited</p>
@@ -70,8 +71,6 @@ const SpacePsychologyIssues = props => {
                     </p>
                 </div>
             }
-
-            {/*<Typist/>*/}
         </div>
     )
 }
